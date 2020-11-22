@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <meta name="description" content="This page covers information about me">
+        <link rel="apple-touch-icon" sizes="180x180" href="pics/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="pics/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="pics/icons/favicon-16x16.png">
+        <link rel="manifest" href="pics/icons/site.webmanifest">
+        <link rel="mask-icon" href="pics/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <title>Coffee</title>
+    </head>
+
+    <body>
+        <!--Header and Navigation Bar-->
+        <header><h1>Order a Coffee</h1></header>
+        <nav class = "mainNav">
+            <ul>
+                <li><a href = "index.html"><span class = "navText">Home</span></a></li>
+                <li><a href = "skills.html"><span class="navText">Skills</span></a></li>
+                <li><a href = "qualification.html"><span class="navText">Qualifications</span></a></li>               
+            </ul>
+        </nav>
+        <!--Coffee form-->
+        <form  method = "get" id = "coffees">
+            <fieldset>
+                <legend>Please choose a drink:</legend>
+                <p>
+                    <label for = "latte">Latte</label>
+                    <input type = "radio" id = "latte" name = "drink" value = "latte">
+                </p>
+                <p>
+                    <label for = "cappuccino">Cappuccino</label>
+                    <input type = "radio" id = "cappuccino" name = "drink" value = "cappuccino">
+                </p>
+                <p>
+                    <label for = "flat_white">Flat White</label>
+                    <input type = "radio" id = "flat_white" name = "drink" value = "flat_white">
+                </p>
+                <p>
+                    <label for = "espresso">Espresso</label>
+                    <input type = "radio" id = "espresso" name = "drink" value = "espresso">
+                </p>
+                <p>
+                    <label for = "americano">Americano</label>
+                    <input type = "radio" id = "americano" name = "drink" value = "americano">
+                </p>
+            </fieldset>
+        </form>
+        <!--Size form-->
+        <form method = "get" id = "size">
+            <fieldset>
+                <legend>Please choose the size of drink:</legend>
+                <p>
+                    <label for = "small">Small(£2.45)</label>
+                    <input type = "radio" id = "small" name = "size" value = "small">
+                </p>
+                <p>
+                    <label for = "medium">Medium(£2.65)</label>
+                    <input type = "radio" id = "medium" name = "size" value = "medium" checked>
+                </p>
+                <p>
+                    <label for = "large">Large(£2.85)</label>
+                    <input type = "radio" id = "large" name = "size" value = "large">
+                </p>
+            </fieldset>
+        </form>
+        <!--Milk Form-->
+        <form method = "get" id = "milks">
+            <fieldset>
+                <legend>Please choose the milk you would like:</legend>
+                <p>
+                    <label for = "whole">Whole</label>
+                    <input type = "radio" id = "whole" name = "milk" value = "whole">
+                </p>
+                <p>
+                    <label for = "skimmed">Skimmed</label>
+                    <input type = "radio" id = "skimmed" name = "milk" value = "skimmed">
+                </p>
+                <p>
+                    <label for = "semi">Semi-skimmed</label>
+                    <input type = "radio" id = "semi" name = "milk" value  = "semi" checked>
+                </p>
+                <p>
+                    <label for = "coconut">Coconut</label>
+                    <input type = "radio" id = "coconut" name = "milk" value  = "coconut">
+                </p>
+                <p>
+                    <label for = "soya">Soya</label>
+                    <input type = "radio" id = "soya" name = "milk" value  = "soya">
+                </p>
+                <p>
+                    <label for = "none">None</label>
+                    <input type = "radio" id = "none" name = "milk" value  = "none">
+                </p>
+            </fieldset>
+        </form>
+        <!--Extras form-->
+        <form method = "get" id = "extras">
+            <fieldset>
+                <legend>Please choose any extras you would like:</legend>
+                <p>
+                    <label for = "cream">Cream(£0.50)</label>
+                    <input type = "checkbox" id = "cream" name = "cream" value = "0">
+                </p>
+                <p>
+                    <label for = "sugar">Spoons of sugar</label>
+                    <input type = "number" id = "sugar" name = "sugar" min = "0" max = "5" value = "0">
+                </p>
+                <p>
+                    <label for = "syrup">Shots of syrup(£0.25)</label>
+                    <input type = "number" id = "syrup" name = "syrup" min = "0" max = "5" value = "0">
+                </p>
+            </fieldset>
+        </form>
+        <!--Current drink information-->
+        <form>          
+            <fieldset>
+                <legend>Current Drink:</legend>
+                <p>Current Drink: <span id="drinkText">No Drink Selected</span></p>
+                <p>Size: <span id = "sizeText"></span></p>
+                <p>Milk: <span id = "milkText"></span></p>
+                <p>Cream: <span id = "creamText"></span></p>
+                <p>Sugars: <span id = "sugarText">0</span></p>
+                <p>Syrup shots: <span id = "syrupText">0</span></p>
+                <p>~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+                <p>Current Price: <span id = "curPrice">£2.65</span></p>
+                <button type = "button" name = "addOrder" id = "addOrder">Add to order</button>                      
+            </fieldset>    
+            <!--Overall order information-->     
+            <fieldset>
+                <legend>Overall Order: </legend>
+                <p>Your Order: </p>
+                <p><span id = orderField></span></p>
+                <p>Total Cost: <span id = "endPrice">£0.00</span></p>
+                <button type = "button" name = "place" id = "place">Place order</button>   
+            </fieldset>
+        </form>
+        <!--Footer-->
+        <footer>
+            <h3 class = "align">Ben Haig</h3>
+            <h4 class = "align">Email: h013294j@student.staffs.ac.uk</h4>
+        </footer>
+    <script src = "script.js"></script>
+    <script src = "serviceworker.js"></script>
+    </body>   
+</html>
